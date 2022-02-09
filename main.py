@@ -21,6 +21,7 @@ run_type = os.environ["INPUT_RUN_TYPE"]
 dag_name = os.environ["INPUT_DAG_NAME"]
 
 def main():
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ["INPUT_GOOGLE_APPLICATION_CREDENTIALS"]
     trigger_dag(
         {
             "config": {
