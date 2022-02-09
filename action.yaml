@@ -1,9 +1,7 @@
-# Trigger Airflow (GCP) Dag Docker Action
-
-This action takes a python pacakage and passes it as a parameter to trigger an Airflow (Composer GCP) DAG
-## Inputs
-
-```yaml
+name: "Trigger DAG Action"
+description: "Trigger an Airflow DAG hosted on GCP"
+author: "Explorium DevOps Team"
+inputs:
   entity_client_version:
     description: 'entity client version'
     required: true
@@ -39,19 +37,10 @@ This action takes a python pacakage and passes it as a parameter to trigger an A
   google_application_credentials: 
     description: 'location of gcp credentials'
     required: true
-    default: './gcp_creds.json'
-```
-
-## Outputs
-
-## `result`
-
-The result of the DAG
-
-## Example usage
-
-```yaml
-uses: actions/explorium-ai/@v1
-with:
-  inputs:
-```
+    default: './gcp_creds.json'     
+outputs:
+  result:
+    description: "Output from the action"
+runs:
+  using: "docker"
+  image: "Dockerfile"
