@@ -11,25 +11,18 @@ from google.oauth2 import id_token
 IAM_SCOPE = "https://www.googleapis.com/auth/iam"
 OAUTH_TOKEN_URI = "https://www.googleapis.com/oauth2/v4/token"
 USE_EXPERIMENTAL_API = True
-ENTITY_CLIENT_VERSION = os.environ["INPUT_ENTITY_CLIENT_VERSION"]
+
 dag_run_id = os.environ["INPUT_DAG_RUN_ID"]
 client_id = os.environ["INPUT_CLIENT_ID"]
-compare_threshold = float(os.environ["INPUT_COMPARE_THRESHOLD"])
-send_slack_on_errors = os.environ["INPUT_SEND_SLACK_ON_ERRORS"]
 webserver_id = os.environ["INPUT_WEBSERVER_ID"]
-run_type = os.environ["INPUT_RUN_TYPE"]
 dag_name = os.environ["INPUT_DAG_NAME"]
+payload = os.environ["INPUT_PAYLOAD"]
 
 def main():
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ["INPUT_GOOGLE_APPLICATION_CREDENTIALS"]
     trigger_dag(
         {
-            "config": {
-                "entity-client-version": ENTITY_CLIENT_VERSION,
-                "compare_threshold": compare_threshold,
-                "send_slack_on_errors": send_slack_on_errors,
-                "run_type": run_type,
-            }
+           json.loads(payload)
         },
         dag_run_id,
     )
