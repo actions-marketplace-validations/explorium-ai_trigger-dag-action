@@ -21,9 +21,7 @@ payload = os.environ["INPUT_PAYLOAD"]
 def main():
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ["INPUT_GOOGLE_APPLICATION_CREDENTIALS"]
     trigger_dag(
-        {
-           json.loads(payload)
-        },
+        json.loads(payload),
         dag_run_id,
     )
     status_code = "running"

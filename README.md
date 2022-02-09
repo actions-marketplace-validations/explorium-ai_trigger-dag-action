@@ -7,7 +7,7 @@ This action takes a python pacakage and passes it as a parameter to trigger an A
   payload:
     description: 'JSON Payload'
     required: false
-    default: '"config": {"run_type":"PR"}'
+    default: '{"config": {"run_type":"PR"}}'
   dag_run_id:
     description: 'custom dag run id'
     required: true
