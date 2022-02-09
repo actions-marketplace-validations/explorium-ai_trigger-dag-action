@@ -53,13 +53,10 @@ The result of the DAG
 ```yaml
 uses: explorium-ai/trigger-dag-action@v1
 with:
-  entity_client_version: something
   dag_run_id: something
   client_id: something
-  compare_threshold: something
-  send_slack_on_errors: something
   webserver_id: something
-  run_type: something
   dag_name: something
   google_application_credentials: something
+  payload: '{"config":"something"}'
 ```
