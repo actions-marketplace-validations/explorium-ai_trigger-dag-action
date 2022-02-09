@@ -4,10 +4,10 @@ This action takes a python pacakage and passes it as a parameter to trigger an A
 ## Inputs
 
 ```yaml
-  entity_client_version:
-    description: 'entity client version'
-    required: true
-    default: 'latest'
+  payload:
+    description: 'JSON Payload'
+    required: false
+    default: '"config": {"run_type":"PR"}'
   dag_run_id:
     description: 'custom dag run id'
     required: true
@@ -16,22 +16,10 @@ This action takes a python pacakage and passes it as a parameter to trigger an A
     description: 'gcp client id'
     required: true
     default: ''
-  compare_threshold:
-    description: 'compare threshold'
-    required: true
-    default: ''
-  send_slack_on_errors:
-    description: 'send slack on errors'
-    required: false
-    default: 'true'
   webserver_id:
     description: 'webserver id'
     required: true
     default: ''         
-  run_type:
-    description: 'run type'
-    required: true
-    default: ''     
   dag_name:
     description: 'dag name'
     required: true
@@ -39,7 +27,7 @@ This action takes a python pacakage and passes it as a parameter to trigger an A
   google_application_credentials: 
     description: 'location of gcp credentials'
     required: true
-    default: './gcp_creds.json'
+    default: './gcp_creds.json'     
 ```
 
 ## Outputs
