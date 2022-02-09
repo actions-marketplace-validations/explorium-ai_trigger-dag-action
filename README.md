@@ -51,7 +51,15 @@ The result of the DAG
 ## Example usage
 
 ```yaml
-uses: actions/explorium-ai/@v1
+uses: explorium-ai/trigger-dag-action@v1
 with:
-  inputs:
+  entity_client_version: something
+  dag_run_id: something
+  client_id: something
+  compare_threshold: something
+  send_slack_on_errors: something
+  webserver_id: something
+  run_type: something
+  dag_name: something
+  google_application_credentials: something
 ```
