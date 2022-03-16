@@ -1,6 +1,6 @@
 # Trigger Airflow (GCP) Dag Docker Action
 
-This action takes a python pacakage and passes it as a parameter to trigger an Airflow (Composer GCP) DAG
+This action triggers an Airflow (Composer GCP) DAG
 ## Inputs
 
 ```yaml
