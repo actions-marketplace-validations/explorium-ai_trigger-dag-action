@@ -1,6 +1,9 @@
 name: "Trigger DAG Action"
 description: "Trigger an Airflow DAG hosted on GCP"
 author: "Explorium DevOps Team"
+branding:
+  icon: activity
+  color: blue
 inputs:
   payload:
     description: 'JSON Payload'
